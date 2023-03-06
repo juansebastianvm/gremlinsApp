@@ -6,7 +6,7 @@ require_once("src/model/Menu.php");
 require_once("src/model/SubMenu.php");
 
 require_once("src/view/html/menu_superior.php");
-require_once("src/view/html/menu_vertical.php");
+require_once("src/view/html/menu_vertical.php"); 
 ?>
 <div id="layoutSidenav_content">
     <main>

@@ -29,7 +29,7 @@ class Conexion {
     function extraer() {
         return $this -> resultado -> fetch_row();
     }
-
+ 
     function ultimoId() {
         return $this -> mysqli -> insert_id;
     }

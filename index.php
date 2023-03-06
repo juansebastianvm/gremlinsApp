@@ -23,7 +23,7 @@ session_start();
 <?php
 if (isset($_SESSION['user'])) {
     if (file_exists("src/view/" . $_GET["pid"] . ".php")) {
-        include("src/view/" . $_GET["pid"] . ".php");
+        include("src/view/" . $_GET["pid"] . ".php"); 
     } else {
         include("src/view/principal.php");
     }
