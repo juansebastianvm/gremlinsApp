@@ -45,7 +45,7 @@ if (isset($_POST["guardar"])) {
         $nuevoUsuario->actualizar();
 
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=usuario&sid=" . $gr_user_id."&msj=3");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=usuario&sid=" . $gr_user_id."&msj=3");
         exit();
     }
 
@@ -80,7 +80,7 @@ if (isset($_POST["guardar"])) {
         $nuevoUsuario->insertar();
 
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=usuario&msj=2");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=usuario&msj=2");
         exit();
     }
 }
@@ -97,20 +97,20 @@ if (isset($_POST["eliminar"])) {
         $eliminarUsuario = new Usuario($gr_user_id);
         $eliminarUsuario->eliminar();
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=usuario&msj=1");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=usuario&msj=1");
         exit();
     }
 }
 
 if (isset($_POST["nuevo"])) {
 
-    header("Location: http://localhost/gremlinsApp/index.php?pid=usuario&sid=0");
+    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=usuario&sid=0");
     exit();
 }
 
 if (isset($_POST["atras"])) {
 
-    header("Location: http://localhost/gremlinsApp/index.php?pid=usuario");
+    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=usuario");
     exit();
 }
 

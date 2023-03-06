@@ -29,7 +29,7 @@ if (isset($_POST["guardar"])) {
         $nuevoPerfil->actualizar();
         $_SESSION['user']['USUARIO']=$usuario;
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=perfil&msj=3");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=perfil&msj=3");
         exit();
     }
 }

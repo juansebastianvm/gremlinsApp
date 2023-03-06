@@ -22,11 +22,11 @@ if (isset($_POST["login"])) {
                     'ROL' => $nuevoLogin -> getROL(),
                     'FECHA' =>  $fecha_actual = date("Y-m-d h:i:s")
                 );
-                header("Location: http://localhost/gremlinsApp/index.php?pid=principal");
+                header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=principal"); 
                 exit();
             } else {
                 session_destroy();
-                header("Location: http://localhost/gremlinsApp/index.php?pid=login");
+                header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=login");
                 exit();                
             }
         }

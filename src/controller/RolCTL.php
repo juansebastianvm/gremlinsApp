@@ -27,7 +27,7 @@ if (isset($_POST["guardar"])) {
         $nuevoRol->actualizar();
 
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=rol&sid=" . $gr_role_id."&msj=3");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&sid=" . $gr_role_id."&msj=3");
         exit();
     }
 
@@ -50,7 +50,7 @@ if (isset($_POST["guardar"])) {
         $nuevoRol->insertar();
 
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=rol&msj=2");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&msj=2");
         exit();
     }
 }
@@ -67,20 +67,20 @@ if (isset($_POST["eliminar"])) {
         $eliminarRol = new Rol($gr_role_id);
         $eliminarRol->eliminar();
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=rol&msj=1");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&msj=1");
         exit();
     }
 }
 
 if (isset($_POST["nuevo"])) {
 
-    header("Location: http://localhost/gremlinsApp/index.php?pid=rol&sid=0");
+    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&sid=0");
     exit();
 }
 
 if (isset($_POST["atras"])) {
 
-    header("Location: http://localhost/gremlinsApp/index.php?pid=rol");
+    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol");
     exit();
 }
 

@@ -27,7 +27,7 @@ if (isset($_POST["guardar"])) {
         $nuevoVista->actualizar();
 
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=vista&sid=" . $gr_view_id."&msj=3");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=vista&sid=" . $gr_view_id."&msj=3");
         exit();
     }
 
@@ -50,7 +50,7 @@ if (isset($_POST["guardar"])) {
         $nuevoVista->insertar();
 
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=vista&msj=2");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=vista&msj=2");
         exit();
     }
 }
@@ -67,20 +67,20 @@ if (isset($_POST["eliminar"])) {
         $eliminarVista = new Vista($gr_view_id);
         $eliminarVista->eliminar();
 
-        header("Location: http://localhost/gremlinsApp/index.php?pid=vista&msj=1");
+        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=vista&msj=1");
         exit();
     }
 }
 
 if (isset($_POST["nuevo"])) {
 
-    header("Location: http://localhost/gremlinsApp/index.php?pid=vista&sid=0");
+    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=vista&sid=0");
     exit();
 }
 
 if (isset($_POST["atras"])) {
 
-    header("Location: http://localhost/gremlinsApp/index.php?pid=vista");
+    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=vista");
     exit();
 }
 
