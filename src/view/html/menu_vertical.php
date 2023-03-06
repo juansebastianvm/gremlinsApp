@@ -5,7 +5,7 @@
                 <div class="nav">
                     <div>
                         <a class="nav-link" href="?pid=principal">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-house"></i></div></i>Inicio
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-house"></i></div>Inicio
                         </a>
                     </div>
                     <?php
