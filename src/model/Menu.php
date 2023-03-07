@@ -85,16 +85,16 @@ class Menu {
     }
 
     function consultarTodo () {
-        $this -> conexion -> abrir();
+        $this -> conexion -> abrir();/*
         $this -> conexion -> ejecutar($this -> MenuDAO -> consultarTodo());
         $this -> EstadoTXSQL = $this -> conexion -> getEstado();
         $menus = array ();
         while ($resultado = $this -> conexion -> extraer()) {
             array_push($menus, new Menu ($resultado[0], $resultado[1]));
         }
-
+*/
         $this -> conexion -> cerrar();
-        return $menus;
+        return array ();
     }
     
     function consultarTodoOrden ($campo, $direccion) {
