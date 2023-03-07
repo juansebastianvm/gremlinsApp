@@ -13,5 +13,14 @@ MParra	Administrador Comercial	MParra	Clientes, Proveedores, Productos, Pedidos 
 LVasquez	Transportador	LVasquez	Clientes y Envíos
 EVelez	Empacador	EVelez	Clientes, Productos y Envíos
 CContreras	Recepcion	CContreras	Distribuidores, Clientes y Pedidos de Venta
+
 ![imagen](https://user-images.githubusercontent.com/23085922/223539760-5b208b46-0e02-42b2-ad46-69b7d5e5146a.png)
 
+<TABLE BORDER>
+	<TR>
+		<TD>A</TD> <TD>B</TD> <TD>C</TD>
+	</TR>
+	<TR>
+		<TD>D</TD> <TD>E</TD> <TD>F</TD>
+	</TR>
+</TABLE>
