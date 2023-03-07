@@ -85,7 +85,6 @@ class Rol {
 
     function actualizar () {
         $this -> conexion -> abrir();
-        echo $this -> RolDAO -> actualizar();
         $this -> conexion -> ejecutar($this -> RolDAO -> actualizar());
         $this -> conexion -> cerrar();
     }
