@@ -47,7 +47,6 @@
                     <?php
                     }
                     ?>
-                    <p><?php echo $estadoTXSQL; ?></p>
 
                 </div>
             </div>
