@@ -97,37 +97,37 @@ class SubMenu {
     function consultarTodo () {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> SubMenuDAO -> consultarTodo());
-        $roles = array ();
+        $submenus = array ();
         while ($resultado = $this -> conexion -> extraer()) {
-            array_push($roles, new SubMenu ($resultado[0], $resultado[1], $resultado[2], $resultado[3]));
+            array_push($submenus, new SubMenu ($resultado[0], $resultado[1], $resultado[2], $resultado[3]));
         }
 
         $this -> conexion -> cerrar();
-        return $roles;
+        return $submenus;
     }
     
     function consultarTodoOrden ($campo, $direccion) {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> SubMenuDAO -> consultarTodoOrden($campo, $direccion));
-        $roles = array ();
+        $submenus = array ();
         while ($resultado = $this -> conexion -> extraer()) {
-            array_push($roles, new SubMenu ($resultado[0], $resultado[1]));
+            array_push($submenus, new SubMenu ($resultado[0], $resultado[1]));
         }
 
         $this -> conexion -> cerrar();
-        return $roles;
+        return $submenus;
     }
     
     function buscar ($filtro) {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> SubMenuDAO -> buscar($filtro));
-        $roles = array ();
+        $submenus = array ();
         while ($resultado = $this -> conexion -> extraer()) {
-            array_push($roles, new SubMenu ($resultado[0], $resultado[1]));
+            array_push($submenus, new SubMenu ($resultado[0], $resultado[1]));
         }
 
         $this -> conexion -> cerrar();
-        return $roles;
+        return $submenus;
     }
     
     function eliminar () {

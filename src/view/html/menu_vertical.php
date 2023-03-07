@@ -10,21 +10,8 @@
                     </div>
                     <?php
 
-                    echo "HOLA";
-
-
                     $menu = new Menu("", "", $user['GR_USER_ID']);
-
-                    echo $menu->to_string();
-
                     $menus = $menu->consultarTodo();
-
-                    
-
-                    $estadoTXSQL = $menu-> getEstadoTXSQL();
-
-                    /* 
-                    
 
                     foreach ($menus as $r) {
                     ?>
@@ -58,7 +45,7 @@
                         }
                         ?>
                     <?php
-                    } */
+                    }
                     ?>
                     <p><?php echo $estadoTXSQL; ?></p>
 

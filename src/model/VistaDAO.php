@@ -49,7 +49,7 @@ class VistaDAO {
 
     function consultarTodoMenu () {    
         return "SELECT GR_VIEW_ID, ACTIVO, ACTUALIZADO_POR, ULTIMA_ACTUALIZACION, VISTA, DESCRIPCION, GR_SUB_MENU_ID, VENTANA
-        FROM permisosMenus WHERE gr_user_id = ".$this -> GR_USER_ID." AND GR_SUB_MENU_ID = ".$this -> GR_SUB_MENU_ID." GROUP BY GR_VIEW_ID, gr_sub_menu_id, submenu, gr_menu_id, menu ORDER BY 1";       
+        FROM permisosmenus WHERE gr_user_id = ".$this -> GR_USER_ID." AND GR_SUB_MENU_ID = ".$this -> GR_SUB_MENU_ID." GROUP BY GR_VIEW_ID, gr_sub_menu_id, submenu, gr_menu_id, menu ORDER BY 1";       
     }      
 
     function consultarTodoOrden ($campo, $direccion) {

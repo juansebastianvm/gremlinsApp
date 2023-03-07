@@ -32,7 +32,7 @@ class SubMenuDAO {
     }
 
     function consultarTodo () {
-        return "SELECT gr_sub_menu_id, submenu, gr_menu_id, icono FROM permisosMenus 
+        return "SELECT gr_sub_menu_id, submenu, gr_menu_id, icono FROM permisosmenus 
         WHERE gr_user_id = ".$this -> GR_USER_ID." AND gr_menu_id = ".$this -> GR_MENU_ID." GROUP BY gr_sub_menu_id, submenu, icono, gr_menu_id, menu ORDER BY 1";            
     }  
 
