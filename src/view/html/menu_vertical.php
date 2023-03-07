@@ -19,7 +19,7 @@
 
                     $menus = $menu->consultarTodo();
 
-                    /*
+                    /* 
 
                     $estadoTXSQL = $menu-> getEstadoTXSQL();
                     */
