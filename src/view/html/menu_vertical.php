@@ -22,7 +22,7 @@
                     /* 
 
                     $estadoTXSQL = $menu-> getEstadoTXSQL();
-                    */
+                    
 
                     foreach ($menus as $r) {
                     ?>
@@ -56,7 +56,7 @@
                         }
                         ?>
                     <?php
-                    }
+                    } */
                     ?>
                     <p><?php echo $estadoTXSQL; ?></p>
 
