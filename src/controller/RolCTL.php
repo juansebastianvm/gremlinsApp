@@ -3,6 +3,8 @@ session_start();
 require_once("../model/Rol.php");
 require_once("Router.php");
 
+echo "HOLA";
+
 if (isset($_POST["guardar"])) {
 
     if (isset($_POST["gr_role_id"]) && ($_POST["gr_role_id"] != "")) {
