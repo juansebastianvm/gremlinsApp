@@ -9,10 +9,15 @@
                         </a>
                     </div>
                     <?php
+
+                    echo "HOLA";
+
+                    /*
                     $menu = new Menu("","",$user['GR_USER_ID']);
                     $menus = $menu->consultarTodo();
 
                     $estadoTXSQL = $menu-> getEstadoTXSQL();
+                    */
 
                      /*   
 
@@ -50,10 +55,12 @@
                     <?php
                     }
 
+                    <p><?php echo $estadoTXSQL; ?></p>
+                    
                     */
 
                     ?>
-                      <p><?php echo $estadoTXSQL; ?></p>
+                      
 
                 </div>
             </div>
