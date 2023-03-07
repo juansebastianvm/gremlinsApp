@@ -5,11 +5,7 @@ require_once("Router.php");
 
 if (isset($_POST["guardar"])) {
 
-    echo "1";
-
     if (isset($_POST["gr_role_id"]) && ($_POST["gr_role_id"] != "")) {
-
-        echo "2";
 
         $gr_role_id = "";
         if (isset($_POST["gr_role_id"])) {
@@ -28,17 +24,21 @@ if (isset($_POST["guardar"])) {
             $activo = $_POST["selectActivo"];
         }
 
+        echo "1";
+
         $nuevoRol = new Rol($gr_role_id, $activo, 2, null, $rol, $descripcion);
         $nuevoRol->actualizar();
 
+        echo "2";
+
 
         header("Location: http://".$Router."/gremlinsApp/index.php?pid=rol&sid=" . $gr_role_id."&msj=3");
+
+        echo "3";
         exit();
     }
 
     if (!isset($_POST["gr_role_id"]) || ($_POST["gr_role_id"] == "")) {
-
-        echo "3";
 
         $rol = "";
         if (isset($_POST["inputRol"])) {
