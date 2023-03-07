@@ -27,13 +27,13 @@ class VistaDAO {
     }
 
     function insertar () {
-        return "INSERT INTO gr_view (ACTIVO, ACTUALIZADO_POR, ULTIMA_ACTUALIZACION, VISTA, DESCRIPCION) 
-                VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> ULTIMA_ACTUALIZACION."','".$this -> VISTA."',
+        return "INSERT INTO gr_view (ACTIVO, ACTUALIZADO_POR, VISTA, DESCRIPCION) 
+                VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> VISTA."',
                         '".$this -> DESCRIPCION."')";
     }
 
     function actualizar () {
-        return "UPDATE gr_view SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",ULTIMA_ACTUALIZACION='".$this -> ULTIMA_ACTUALIZACION."',
+        return "UPDATE gr_view SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",
                        VISTA='".$this -> VISTA."',DESCRIPCION='".$this -> DESCRIPCION."' WHERE GR_VIEW_ID = ".$this -> GR_VIEW_ID;
     }
 

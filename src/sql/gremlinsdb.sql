@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 06-03-2023 a las 03:01:33
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Servidor: localhost
+-- Tiempo de generación: 07-03-2023 a las 18:57:32
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,10 +32,10 @@ USE `gremlinsdb`;
 DROP TABLE IF EXISTS `gr_menu`;
 CREATE TABLE `gr_menu` (
   `gr_menu_ID` int(10) NOT NULL,
-  `ACTIVO` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'S',
+  `ACTIVO` char(1) NOT NULL DEFAULT 'S',
   `ACTUALIZADO_POR` int(10) NOT NULL,
-  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp(),
-  `MENU` varchar(45) COLLATE utf8mb4_spanish_ci NOT NULL
+  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `MENU` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -55,11 +55,11 @@ INSERT INTO `gr_menu` (`gr_menu_ID`, `ACTIVO`, `ACTUALIZADO_POR`, `ULTIMA_ACTUAL
 DROP TABLE IF EXISTS `gr_role`;
 CREATE TABLE `gr_role` (
   `GR_ROLE_ID` int(10) NOT NULL,
-  `ACTIVO` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'S',
+  `ACTIVO` char(1) NOT NULL DEFAULT 'S',
   `ACTUALIZADO_POR` int(10) NOT NULL,
-  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp(),
-  `ROL` text COLLATE utf8mb4_spanish_ci NOT NULL,
-  `DESCRIPCION` text COLLATE utf8mb4_spanish_ci DEFAULT NULL
+  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `ROL` text NOT NULL,
+  `DESCRIPCION` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `gr_role` (
 
 INSERT INTO `gr_role` (`GR_ROLE_ID`, `ACTIVO`, `ACTUALIZADO_POR`, `ULTIMA_ACTUALIZACION`, `ROL`, `DESCRIPCION`) VALUES
 (1, 'S', 2, '0000-00-00 00:00:00', 'Administrador Sistema', 'Role Administrador del Sistema'),
-(2, 'S', 2, '0000-00-00 00:00:00', 'Gerente', 'Rol asignado a los perfiles de Gerentes de la Empresa Gremlins'),
+(2, 'S', 2, '2023-03-07 17:52:36', 'Gerente P', 'Rol asignado a los perfiles de Gerentes de la Empresa Gremlins'),
 (3, 'S', 2, '0000-00-00 00:00:00', 'Administrador Comercial', 'Rol asignado a los perfiles de Administradores Comerciales de la Empresa Gremlins'),
 (4, 'S', 2, '0000-00-00 00:00:00', 'Empacador', 'Rol asignado a los perfiles de Empacadores de la Empresa Gremlins'),
 (5, 'S', 2, '0000-00-00 00:00:00', 'Transportador', 'Rol asignado a los perfiles de Transportadores de la Empresa Gremlins'),
@@ -84,8 +84,8 @@ DROP TABLE IF EXISTS `gr_session`;
 CREATE TABLE `gr_session` (
   `gr_session_ID` int(10) NOT NULL,
   `gr_user_ID` int(10) NOT NULL,
-  `fechaIngreso` timestamp NOT NULL DEFAULT current_timestamp(),
-  `fechaEgreso` timestamp NOT NULL DEFAULT current_timestamp()
+  `fechaIngreso` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `fechaEgreso` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
@@ -97,12 +97,12 @@ CREATE TABLE `gr_session` (
 DROP TABLE IF EXISTS `gr_sub_menu`;
 CREATE TABLE `gr_sub_menu` (
   `gr_sub_menu_ID` int(10) NOT NULL,
-  `ACTIVO` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'S',
+  `ACTIVO` char(1) NOT NULL DEFAULT 'S',
   `ACTUALIZADO_POR` int(10) NOT NULL,
-  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp(),
+  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `gr_menu_ID` int(10) NOT NULL,
-  `SUBMENU` varchar(45) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `ICONO` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL
+  `SUBMENU` varchar(45) NOT NULL,
+  `ICONO` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -124,14 +124,14 @@ INSERT INTO `gr_sub_menu` (`gr_sub_menu_ID`, `ACTIVO`, `ACTUALIZADO_POR`, `ULTIM
 DROP TABLE IF EXISTS `gr_user`;
 CREATE TABLE `gr_user` (
   `GR_USER_ID` int(10) NOT NULL,
-  `ACTIVO` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'S',
+  `ACTIVO` char(1) NOT NULL DEFAULT 'S',
   `ACTUALIZADO_POR` int(10) NOT NULL,
-  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp(),
-  `USUARIO` text COLLATE utf8mb4_spanish_ci NOT NULL,
-  `DESCRIPCION` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `USUARIO` text NOT NULL,
+  `DESCRIPCION` text DEFAULT NULL,
   `GR_ROLE_ID` int(10) NOT NULL,
-  `USER` text COLLATE utf8mb4_spanish_ci NOT NULL,
-  `PASSWORD` text COLLATE utf8mb4_spanish_ci NOT NULL
+  `USER` text NOT NULL,
+  `PASSWORD` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -155,13 +155,13 @@ INSERT INTO `gr_user` (`GR_USER_ID`, `ACTIVO`, `ACTUALIZADO_POR`, `ULTIMA_ACTUAL
 DROP TABLE IF EXISTS `gr_view`;
 CREATE TABLE `gr_view` (
   `GR_VIEW_ID` int(10) NOT NULL,
-  `ACTIVO` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'S',
+  `ACTIVO` char(1) NOT NULL DEFAULT 'S',
   `ACTUALIZADO_POR` int(10) NOT NULL,
-  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp(),
-  `VISTA` text COLLATE utf8mb4_spanish_ci NOT NULL,
-  `DESCRIPCION` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `VISTA` text NOT NULL,
+  `DESCRIPCION` text DEFAULT NULL,
   `GR_SUB_MENU_ID` int(10) NOT NULL,
-  `VENTANA` varchar(45) COLLATE utf8mb4_spanish_ci NOT NULL
+  `VENTANA` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -189,9 +189,9 @@ INSERT INTO `gr_view` (`GR_VIEW_ID`, `ACTIVO`, `ACTUALIZADO_POR`, `ULTIMA_ACTUAL
 DROP TABLE IF EXISTS `gr_view_line`;
 CREATE TABLE `gr_view_line` (
   `gr_view_line_ID` int(10) NOT NULL,
-  `ACTIVO` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'S',
+  `ACTIVO` char(1) NOT NULL DEFAULT 'S',
   `ACTUALIZADO_POR` int(10) NOT NULL,
-  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp(),
+  `ULTIMA_ACTUALIZACION` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `gr_role_ID` int(10) NOT NULL,
   `gr_view_ID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -265,7 +265,7 @@ CREATE TABLE `permisosmenus` (
 DROP TABLE IF EXISTS `permisosmenus`;
 
 DROP VIEW IF EXISTS `permisosmenus`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `permisosmenus`  AS SELECT `e`.`gr_menu_ID` AS `gr_menu_id`, `e`.`MENU` AS `menu`, `d`.`gr_sub_menu_ID` AS `gr_sub_menu_id`, `d`.`SUBMENU` AS `submenu`, `d`.`ICONO` AS `icono`, `c`.`GR_VIEW_ID` AS `gr_view_id`, `c`.`VISTA` AS `vista`, CASE WHEN `c`.`ACTIVO` = 'S' THEN 'Activo' ELSE 'Inactivo' END AS `activo`, `c`.`ACTUALIZADO_POR` AS `ACTUALIZADO_POR`, `c`.`ULTIMA_ACTUALIZACION` AS `ULTIMA_ACTUALIZACION`, `c`.`DESCRIPCION` AS `DESCRIPCION`, `c`.`VENTANA` AS `VENTANA`, `b`.`GR_USER_ID` AS `gr_user_id`, `b`.`USUARIO` AS `usuario` FROM ((((`gr_view_line` `a` join `gr_user` `b`) join `gr_view` `c`) join `gr_sub_menu` `d`) join `gr_menu` `e`) WHERE `a`.`gr_role_ID` = `b`.`GR_ROLE_ID` AND `a`.`gr_view_ID` = `c`.`GR_VIEW_ID` AND `c`.`GR_SUB_MENU_ID` = `d`.`gr_sub_menu_ID` AND `d`.`gr_menu_ID` = `e`.`gr_menu_ID` ORDER BY `e`.`gr_menu_ID` ASC, `d`.`gr_sub_menu_ID` ASC, `c`.`GR_VIEW_ID` ASC, `b`.`GR_USER_ID` ASC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `permisosmenus`  AS SELECT `e`.`gr_menu_ID` AS `gr_menu_id`, `e`.`MENU` AS `menu`, `d`.`gr_sub_menu_ID` AS `gr_sub_menu_id`, `d`.`SUBMENU` AS `submenu`, `d`.`ICONO` AS `icono`, `c`.`GR_VIEW_ID` AS `gr_view_id`, `c`.`VISTA` AS `vista`, CASE WHEN `c`.`ACTIVO` = 'S' THEN 'Activo' ELSE 'Inactivo' END AS `activo`, `c`.`ACTUALIZADO_POR` AS `ACTUALIZADO_POR`, `c`.`ULTIMA_ACTUALIZACION` AS `ULTIMA_ACTUALIZACION`, `c`.`DESCRIPCION` AS `DESCRIPCION`, `c`.`VENTANA` AS `VENTANA`, `b`.`GR_USER_ID` AS `gr_user_id`, `b`.`USUARIO` AS `usuario` FROM ((((`gr_view_line` `a` join `gr_user` `b`) join `gr_view` `c`) join `gr_sub_menu` `d`) join `gr_menu` `e`) WHERE `a`.`gr_role_ID` = `b`.`GR_ROLE_ID` AND `a`.`gr_view_ID` = `c`.`GR_VIEW_ID` AND `c`.`GR_SUB_MENU_ID` = `d`.`gr_sub_menu_ID` AND `d`.`gr_menu_ID` = `e`.`gr_menu_ID` ORDER BY `e`.`gr_menu_ID` ASC, `d`.`gr_sub_menu_ID` ASC, `c`.`GR_VIEW_ID` ASC, `b`.`GR_USER_ID` ASC  ;
 
 --
 -- Índices para tablas volcadas

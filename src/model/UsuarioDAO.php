@@ -29,18 +29,18 @@ class UsuarioDAO {
     }
 
     function insertar () {
-            return "INSERT INTO gr_user (ACTIVO, ACTUALIZADO_POR, ULTIMA_ACTUALIZACION, USUARIO, DESCRIPCION, GR_ROLE_ID, USER, PASSWORD) 
-            VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> ULTIMA_ACTUALIZACION."','".$this -> USUARIO."',
+            return "INSERT INTO gr_user (ACTIVO, ACTUALIZADO_POR, USUARIO, DESCRIPCION, GR_ROLE_ID, USER, PASSWORD) 
+            VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> USUARIO."',
                     '".$this -> DESCRIPCION."',".$this -> GR_ROLE_ID.",'".$this -> USER."','".$this -> PASSWORD."')";
     }
 
     function actualizar () {
         if ($this -> PASSWORD == "*") {        
-            return "UPDATE gr_user SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",ULTIMA_ACTUALIZACION='".$this -> ULTIMA_ACTUALIZACION."',
+            return "UPDATE gr_user SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",
             USUARIO='".$this -> USUARIO."',DESCRIPCION='".$this -> DESCRIPCION."',GR_ROLE_ID=".$this -> GR_ROLE_ID.",USER='".$this -> USER."' 
             WHERE GR_USER_ID = ".$this -> GR_USER_ID;
         } else {
-            return "UPDATE gr_user SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",ULTIMA_ACTUALIZACION='".$this -> ULTIMA_ACTUALIZACION."',
+            return "UPDATE gr_user SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",
             USUARIO='".$this -> USUARIO."',DESCRIPCION='".$this -> DESCRIPCION."',GR_ROLE_ID=".$this -> GR_ROLE_ID.",USER='".$this -> USER."',
             PASSWORD='".$this -> PASSWORD."' WHERE GR_USER_ID = ".$this -> GR_USER_ID;                        
         }

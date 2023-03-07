@@ -21,13 +21,13 @@ class RolDAO {
     }
 
     function insertar () {
-        return "INSERT INTO gr_role (ACTIVO, ACTUALIZADO_POR, ULTIMA_ACTUALIZACION, ROL, DESCRIPCION) 
-                VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> ULTIMA_ACTUALIZACION."','".$this -> ROL."',
+        return "INSERT INTO gr_role (ACTIVO, ACTUALIZADO_POR, ROL, DESCRIPCION) 
+                VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> ROL."',
                         '".$this -> DESCRIPCION."')";
     }
 
     function actualizar () {
-        return "UPDATE gr_role SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",ULTIMA_ACTUALIZACION='".$this -> ULTIMA_ACTUALIZACION."',
+        return "UPDATE gr_role SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",
                        ROL='".$this -> ROL."',DESCRIPCION='".$this -> DESCRIPCION."' WHERE GR_ROLE_ID = ".$this -> GR_ROLE_ID;
     }
 

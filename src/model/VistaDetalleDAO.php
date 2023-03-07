@@ -21,13 +21,13 @@ class VistaDetalleDAO {
     }
 
     function insertar () {
-        return "INSERT INTO gr_view_line (ACTIVO, ACTUALIZADO_POR, ULTIMA_ACTUALIZACION, GR_VIEW_ID, GR_ROLE_ID) 
-                VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> ULTIMA_ACTUALIZACION."','".$this -> GR_VIEW_ID."',
+        return "INSERT INTO gr_view_line (ACTIVO, ACTUALIZADO_POR, GR_VIEW_ID, GR_ROLE_ID) 
+                VALUES ('".$this -> ACTIVO."',".$this -> ACTUALIZADO_POR.",'".$this -> GR_VIEW_ID."',
                         '".$this -> GR_ROLE_ID."')";
     }
 
     function actualizar () {
-        return "UPDATE gr_view_line SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",ULTIMA_ACTUALIZACION='".$this -> ULTIMA_ACTUALIZACION."',
+        return "UPDATE gr_view_line SET ACTIVO='".$this -> ACTIVO."',ACTUALIZADO_POR=".$this -> ACTUALIZADO_POR.",
                        GR_VIEW_ID='".$this -> GR_VIEW_ID."',GR_ROLE_ID='".$this -> GR_ROLE_ID."' WHERE GR_VIEW_LINE_ID = ".$this -> GR_VIEW_LINE_ID;
     }
 
