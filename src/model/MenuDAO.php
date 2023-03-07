@@ -28,7 +28,7 @@ class MenuDAO {
     }
 
     function consultarTodo () {
-        return "SELECT gr_menu_id, menu FROM permisosMenus WHERE gr_user_id = ".$this -> GR_USER_ID." GROUP BY gr_menu_id, menu ORDER BY 1";            
+        return "SELECT gr_menu_id, menu FROM permisosmenus WHERE gr_user_id = ".$this -> GR_USER_ID." GROUP BY gr_menu_id, menu ORDER BY 1";            
     }  
 
     function consultarTodoOrden ($campo, $direccion) {

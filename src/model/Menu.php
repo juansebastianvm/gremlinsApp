@@ -89,12 +89,10 @@ class Menu {
         $this -> conexion -> ejecutar($this -> MenuDAO -> consultarTodo());
         $this -> EstadoTXSQL = $this -> MenuDAO -> consultarTodo();
     
-        $menus = array ();
-            /*
+        $menus = array ();        
         while ($resultado = $this -> conexion -> extraer()) {
             array_push($menus, new Menu ($resultado[0], $resultado[1]));
         }
-*/
         $this -> conexion -> cerrar();
         return $menus;
     }
@@ -136,5 +134,3 @@ class Menu {
     }
 
 }
-
-?>
