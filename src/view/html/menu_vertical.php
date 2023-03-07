@@ -56,7 +56,7 @@
                     }
 
                     <p><?php echo $estadoTXSQL; ?></p>
-                    
+ <?php echo $user['USUARIO']; ?>
                     */
 
                     ?>
@@ -66,7 +66,7 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Conectado como:</div>
-                <?php echo $user['USUARIO']; ?>
+               
             </div>
         </nav>
     </div>
