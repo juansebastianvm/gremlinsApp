@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("../model/Perfil.php");
+require_once("Router.php");
 
 if (isset($_POST["guardar"])) {
 
@@ -29,7 +30,7 @@ if (isset($_POST["guardar"])) {
         $nuevoPerfil->actualizar();
         $_SESSION['user']['USUARIO']=$usuario;
 
-        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=perfil&msj=3");
+        header("Location: http://".$Router."/gremlinsApp/index.php?pid=perfil&msj=3");
         exit();
     }
 }

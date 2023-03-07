@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("../model/Login.php");
+require_once("Router.php");
 
 if (isset($_POST["login"])) {
 
@@ -22,11 +23,11 @@ if (isset($_POST["login"])) {
                     'ROL' => $nuevoLogin -> getROL(),
                     'FECHA' =>  $fecha_actual = date("Y-m-d h:i:s")
                 );
-                header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=principal"); 
+                header("Location: http://".$Router."/gremlinsApp/index.php?pid=principal"); 
                 exit();
             } else {
                 session_destroy();
-                header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=login");
+                header("Location: http://".$Router."/gremlinsApp/index.php?pid=login");
                 exit();                
             }
         }

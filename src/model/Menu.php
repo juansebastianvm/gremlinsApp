@@ -77,6 +77,7 @@ class Menu {
     function consultarTodo () {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> MenuDAO -> consultarTodo());
+        $estadoSQL = $this -> conexion -> getEstado();
         $roles = array ();
         while ($resultado = $this -> conexion -> extraer()) {
             array_push($roles, new Menu ($resultado[0], $resultado[1]));

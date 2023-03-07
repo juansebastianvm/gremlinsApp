@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("../model/Rol.php");
+require_once("Router.php");
 
 if (isset($_POST["guardar"])) {
 
@@ -27,7 +28,7 @@ if (isset($_POST["guardar"])) {
         $nuevoRol->actualizar();
 
 
-        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&sid=" . $gr_role_id."&msj=3");
+        header("Location: http://".$Router."/gremlinsApp/index.php?pid=rol&sid=" . $gr_role_id."&msj=3");
         exit();
     }
 
@@ -50,7 +51,7 @@ if (isset($_POST["guardar"])) {
         $nuevoRol->insertar();
 
 
-        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&msj=2");
+        header("Location: http://".$Router."/gremlinsApp/index.php?pid=rol&msj=2");
         exit();
     }
 }
@@ -67,20 +68,20 @@ if (isset($_POST["eliminar"])) {
         $eliminarRol = new Rol($gr_role_id);
         $eliminarRol->eliminar();
 
-        header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&msj=1");
+        header("Location: http://".$Router."/gremlinsApp/index.php?pid=rol&msj=1");
         exit();
     }
 }
 
 if (isset($_POST["nuevo"])) {
 
-    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol&sid=0");
+    header("Location: http://".$Router."/gremlinsApp/index.php?pid=rol&sid=0");
     exit();
 }
 
 if (isset($_POST["atras"])) {
 
-    header("Location: http://34.168.147.27/gremlinsApp/index.php?pid=rol");
+    header("Location: http://".$Router."/gremlinsApp/index.php?pid=rol");
     exit();
 }
 
