@@ -18,9 +18,24 @@ CContreras	Recepcion	CContreras	Distribuidores, Clientes y Pedidos de Venta
 
 <TABLE BORDER>
 	<TR>
-		<TD>A</TD> <TD>B</TD> <TD>C</TD>
+		<TH>Usuario</TH> <TH>Cargo</TH> <TH>Contraseña</TH> <TH>Nivel de Acceso</TH>
 	</TR>
 	<TR>
-		<TD>D</TD> <TD>E</TD> <TD>F</TD>
+		<TD>ADMIN</TD> <TD>Administrador del Sistema</TD> <TD>ADMIN</TD> <TD>Todas las ventanas - Incluyendo las Configuraciones del Sistema</TD>
+	</TR>
+	<TR>
+		<TD>D</TD> <TD>E</TD> <TD>F</TD> <TD>C</TD>
+	</TR>
+  	<TR>
+		<TD>D</TD> <TD>E</TD> <TD>F</TD> <TD>C</TD>
+	</TR>
+  	<TR>
+		<TD>D</TD> <TD>E</TD> <TD>F</TD> <TD>C</TD>
+	</TR>
+  	<TR>
+		<TD>D</TD> <TD>E</TD> <TD>F</TD> <TD>C</TD>
+	</TR>
+  	<TR>
+		<TD>D</TD> <TD>E</TD> <TD>F</TD> <TD>C</TD>
 	</TR>
 </TABLE>
