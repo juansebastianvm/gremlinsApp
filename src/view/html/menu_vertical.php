@@ -12,8 +12,9 @@
 
                     echo "HOLA";
 
-                    /*
+                    
                     $menu = new Menu("","",$user['GR_USER_ID']);
+                    /*
                     $menus = $menu->consultarTodo();
 
                     $estadoTXSQL = $menu-> getEstadoTXSQL();
