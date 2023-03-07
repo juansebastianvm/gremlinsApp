@@ -19,9 +19,11 @@
 
                     $menus = $menu->consultarTodo();
 
-                    /* 
+                    
 
                     $estadoTXSQL = $menu-> getEstadoTXSQL();
+
+                    /* 
                     
 
                     foreach ($menus as $r) {
