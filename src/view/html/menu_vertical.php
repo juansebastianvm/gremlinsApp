@@ -11,6 +11,11 @@
                     <?php
                     $menu = new Menu("","",$user['GR_USER_ID']);
                     $menus = $menu->consultarTodo();
+
+                    $estadoTXSQL = $menu-> getEstadoTXSQL();
+
+                     /*   
+
                     foreach ($menus as $r) {
                     ?>
                         <div class="sb-sidenav-menu-heading" id=<?php echo $r->getGR_MENU_ID(); ?>><?php echo $r->getMENU(); ?></div>
@@ -44,7 +49,12 @@
                         ?>
                     <?php
                     }
+
+                    */
+
                     ?>
+                      <p><?php echo $estadoTXSQL; ?></p>
+
                 </div>
             </div>
             <div class="sb-sidenav-footer">

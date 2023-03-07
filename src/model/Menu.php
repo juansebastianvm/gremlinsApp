@@ -8,7 +8,9 @@ class Menu {
     private $GR_USER_ID;
 
     private $MenuDAO;
-    private $conexion;  
+    private $conexion; 
+    
+    private $EstadoTXSQL;
 
     function __construct($GR_MENU_ID = "", $MENU = "", $GR_USER_ID = "") {
 
@@ -21,6 +23,14 @@ class Menu {
         $this -> conexion = new Conexion();                                              
 
     }      
+
+    function setEstadoTXSQL ($EstadoTXSQL) {
+        $this -> EstadoTXSQL = $EstadoTXSQL;
+    }
+
+    function getEstadoTXSQL () {
+        return $this -> EstadoTXSQL;
+    }
 
     function setGR_USER_ID ($GR_USER_ID) {
         $this -> GR_USER_ID = $GR_USER_ID;
@@ -77,7 +87,7 @@ class Menu {
     function consultarTodo () {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> MenuDAO -> consultarTodo());
-        $estadoSQL = $this -> conexion -> getEstado();
+        $this -> EstadoTXSQL = $this -> conexion -> getEstado();
         $roles = array ();
         while ($resultado = $this -> conexion -> extraer()) {
             array_push($roles, new Menu ($resultado[0], $resultado[1]));
