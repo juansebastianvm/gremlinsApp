@@ -88,37 +88,37 @@ class Menu {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> MenuDAO -> consultarTodo());
         $this -> EstadoTXSQL = $this -> conexion -> getEstado();
-        $roles = array ();
+        $menus = array ();
         while ($resultado = $this -> conexion -> extraer()) {
-            array_push($roles, new Menu ($resultado[0], $resultado[1]));
+            array_push($menus, new Menu ($resultado[0], $resultado[1]));
         }
 
         $this -> conexion -> cerrar();
-        return $roles;
+        return $menus;
     }
     
     function consultarTodoOrden ($campo, $direccion) {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> MenuDAO -> consultarTodoOrden($campo, $direccion));
-        $roles = array ();
+        $menus = array ();
         while ($resultado = $this -> conexion -> extraer()) {
-            array_push($roles, new Menu ($resultado[0], $resultado[1]));
+            array_push($menus, new Menu ($resultado[0], $resultado[1]));
         }
 
         $this -> conexion -> cerrar();
-        return $roles;
+        return $menus;
     }
     
     function buscar ($filtro) {
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> MenuDAO -> buscar($filtro));
-        $roles = array ();
+        $menus = array ();
         while ($resultado = $this -> conexion -> extraer()) {
-            array_push($roles, new Menu ($resultado[0], $resultado[1]));
+            array_push($menus, new Menu ($resultado[0], $resultado[1]));
         }
 
         $this -> conexion -> cerrar();
-        return $roles;
+        return $menus;
     }
     
     function eliminar () {
