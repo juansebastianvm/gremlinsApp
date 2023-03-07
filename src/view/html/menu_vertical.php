@@ -12,19 +12,17 @@
 
                     echo "HOLA";
 
-                    
-                    $menu = new Menu("","",$user['GR_USER_ID']);
 
-                    echo $menu -> to_string();
-                    
+                    $menu = new Menu("", "", $user['GR_USER_ID']);
+
+                    echo $menu->to_string();
+
                     $menus = $menu->consultarTodo();
 
                     /*
 
                     $estadoTXSQL = $menu-> getEstadoTXSQL();
                     */
-
-                     /*   
 
                     foreach ($menus as $r) {
                     ?>
@@ -44,7 +42,7 @@
                             <div class="collapse" id="collapseLayouts-<?php echo $d->getGR_SUB_MENU_ID(); ?>" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <?php
-                                    $ventana = new Vista("", "", "", "", "", "", $d->getGR_SUB_MENU_ID(),"", $user['GR_USER_ID']);
+                                    $ventana = new Vista("", "", "", "", "", "", $d->getGR_SUB_MENU_ID(), "", $user['GR_USER_ID']);
                                     $ventanas = $ventana->consultarTodoMenu();
                                     foreach ($ventanas as $v) {
                                     ?>
@@ -59,19 +57,14 @@
                         ?>
                     <?php
                     }
-
-                    <p><?php echo $estadoTXSQL; ?></p>
- <?php echo $user['USUARIO']; ?>
-                    */
-
                     ?>
-                      
+                    <p><?php echo $estadoTXSQL; ?></p>
 
                 </div>
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Conectado como:</div>
-               
+                <?php echo $user['USUARIO']; ?>
             </div>
         </nav>
     </div>
