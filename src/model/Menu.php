@@ -127,6 +127,12 @@ class Menu {
         $this -> conexion -> cerrar();
     }    
 
+    function to_string () {
+
+        return  "GR_MENU_ID: ".$this -> GR_MENU_ID ." MENU: ".  $this ->  MENU ." GR_USER_ID: ". $this -> GR_USER_ID;
+
+    }
+
 }
 
 ?>

@@ -14,6 +14,8 @@
 
                     
                     $menu = new Menu("","",$user['GR_USER_ID']);
+
+                    echo $menu -> to_string();
                     /*
                     $menus = $menu->consultarTodo();
 
