@@ -25,9 +25,6 @@ if (isset($_POST["guardar"])) {
         }
 
         $nuevoRol = new Rol($gr_role_id, $activo, 2, null, $rol, $descripcion);
-
-        echo "gr_role_id:".$gr_role_id." activo:".$activo." user:"."2"." Actualizacion:".null." Rol:".$rol." Descripcion:".$descripcion;
-
         $nuevoRol->actualizar();
 
         header("Location: http://".$Router."/gremlinsApp/index.php?pid=rol&sid=" . $gr_role_id."&msj=3");
