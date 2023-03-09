@@ -23,11 +23,15 @@ session_start();
 <?php
 if (isset($_SESSION['user'])) {
     if (file_exists("src/view/" . $_GET["pid"] . ".php")) {
-        include("src/view/" . $_GET["pid"] . ".php"); 
+        include("src/view/" . $_GET["pid"] . ".php");
     } else {
         include("src/view/principal.php");
     }
 } else {
+    $msj2 = "";
+    if (isset($_GET["pid"]) && $_GET["pid"] != "login") {
+        $msj2 = "0";
+    }
     include("src/view/login.php");
 }
 ?>

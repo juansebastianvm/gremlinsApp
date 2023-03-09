@@ -27,7 +27,7 @@ if (isset($_POST["login"])) {
                 exit();
             } else {
                 session_destroy();
-                header("Location: http://".$Router."/gremlinsApp/index.php?pid=login");
+                header("Location: http://".$Router."/gremlinsApp/index.php?pid=login&msj=1");
                 exit();                
             }
         }
